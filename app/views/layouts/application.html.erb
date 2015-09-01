@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shoppies</title>
+
+	<meta charset="utf-8">
+	<title>Shoppie - Modern Online Store</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+	<meta name="description" content="Modern Online Store">
+	<meta name="keywords" content="Shoppie, Modern Online Store">
+	<meta name="author" content="http://adamantium.sk">
+	<meta property="og:image" content="images/facebook-like-image.jpg">
+
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+</head>
+<body class="body-background2 content-font dark-color">
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-29358822-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+	<div id="fb-root"></div>
+	<script type="text/javascript">(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=331995390170685";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<a id="top"></a>
+	<%= render 'layouts/header' %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="page-content">
+   <div class="page-block page-block-top light-bg grid-container">
+      <div class="breadcrumbs grid-100 middle-color">
+         <a href="homepage.html" class="dark-color active-hover">Home</a>
+         <a href="products-list.html" class="dark-color active-hover">Women</a>
+         <strong class="active-color">Jackets & Coats</strong>
+      </div>
+   </div>
+   <div class="page-block page-block-bottom cream-bg grid-container">
+      <div class="sidebar-shadow push-25"></div>
+      <div class="sidebar grid-25 cream-gradient transition-all" id="sidebar-mobile">
+         <div class="sidebar-box sidebar-top cream-gradient">
+            <nav class="submenu">
+               <ul class="expandable-menu">
+                  <li class="align-right back">
+                     <a href="#sidebar-mobile" class="dark-color active-hover click-slide"><i class="icon-chevron-right"></i></a>
+                  </li>
+                  <li class="expanded">
+                     <a href="products-list.html" class="dark-color active-hover selected">Women</a>
+                     <ul>
+                        <li>
+                           <a href="products-list.html" class="dark-color active-hover selected"><b class="middle-color">&rsaquo;</b> Cosmetics <small class="middle-color">(15)</small></a>
+                        </li>
+                        <li>
+                           <a href="products-list.html" class="dark-color active-hover"><b class="middle-color">&rsaquo;</b> Maternity Wear <small class="middle-color">(27)</small></a>
+                        </li>
+                     </ul>
+               </ul>
+            </nav>
+         </div>
+
+         <div class="sidebar-box sidebar-bottom cream-gradient">
+            <h2 class="header-font active-color">Newsletters signup</h2>
+            <form method="POST" action="homepage.html">
+               <ul class="sidebar-list">
+                  <li class="sidebar-divider"></li>
+                  <li>
+                     Lorem Ipsum is simply dummy text of the printing and typesetting
+                  </li>
+                  <li>
+                     <input type="text" name="email" class="text-input input-no-margin dark-color light-bg" placeholder="Enter your email...">
+                  </li>
+                  <li class="align-center">
+                     <button type="submit" class="button-small light-color middle-gradient dark-gradient-hover">Subscribe</button>
+                  </li>
+               </ul>
+            </form>
+         </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<%= yield %>
+
+
+
+   </div>
+</section>
+
+	<%= render 'layouts/footer' %>
+
+	<script type="text/javascript">
+		Global.documentReady(); 
+	</script>
+
+</body>
+</html>
