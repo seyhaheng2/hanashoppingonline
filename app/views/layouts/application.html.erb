@@ -62,7 +62,7 @@
       <div class="breadcrumbs grid-100 middle-color">
          <a href="homepage.html" class="dark-color active-hover">Home</a>
          <a href="products-list.html" class="dark-color active-hover">Women</a>
-         <strong class="active-color">Jackets & Coats</strong>
+         <!-- <strong class="active-color">Jackets & Coats</strong> -->
       </div>
    </div>
    <div class="page-block page-block-bottom cream-bg grid-container">
@@ -74,16 +74,22 @@
                   <li class="align-right back">
                      <a href="#sidebar-mobile" class="dark-color active-hover click-slide"><i class="icon-chevron-right"></i></a>
                   </li>
+                  <% @category.each do |cate| %>
                   <li class="expanded">
-                     <a href="products-list.html" class="dark-color active-hover selected">Women</a>
+                     <%= link_to cate.name,root_path, class: "dark-color active-hover selected" %>
                      <ul>
                         <li>
-                           <a href="products-list.html" class="dark-color active-hover selected"><b class="middle-color">&rsaquo;</b> Cosmetics <small class="middle-color">(15)</small></a>
-                        </li>
-                        <li>
-                           <a href="products-list.html" class="dark-color active-hover"><b class="middle-color">&rsaquo;</b> Maternity Wear <small class="middle-color">(27)</small></a>
+                        <% cate.subcategories.each do |sub| %>
+                              <%= link_to root_path, class: "dark-color active-hover" do %>
+                                 <b class="middle-color">&rsaquo;</b>
+                                 <%= sub.name %>
+                                 <small class="middle-color">(15)</small>
+                              <% end %>
+                           <% end %>
                         </li>
                      </ul>
+                  </li>
+                  <% end %>
                </ul>
             </nav>
          </div>

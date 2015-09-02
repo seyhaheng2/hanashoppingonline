@@ -1,8 +1,8 @@
 <header>
    <nav class="top-menu grid-container hide-on-tablet hide-on-mobile">
       <div class="grid-100">
-         <div class="fb-like" data-href="https://www.facebook.com/adamantium.solutions" data-width="120" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-         <div class="top-menu-left">
+     <!--     <div class="fb-like" data-href="https://www.facebook.com/adamantium.solutions" data-width="120" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div> -->
+  <!--        <div class="top-menu-left">
             <ul>
                <li>
                   <a href="blog.html" class="dark-color">Blog</a>
@@ -14,7 +14,7 @@
                   <a href="my-account.html" class="dark-color">My Account</a>
                </li>
             </ul>
-         </div>
+         </div> -->
          <div class="top-menu-right">
             <ul>
                <li>
@@ -38,41 +38,14 @@
                            <a href="forgotten.html" class="forgotten-link middle-color float-left">Have you forgotten<br/> your password?</a>
                            <button class="button-small button-with-icon float-right light-color middle-gradient dark-gradient-hover" type="submit">
                            Log in
-                           <span><i class="icon-angle-right"></i></span>
+                           <span><i class="fa fa-angle-right"></i></span>
                            </button>
                         </li>
                      </ul>
                   </form>
                </li>
                <li>
-                  <a href="register.html" class="dark-color">Register</a>
-               </li>
-               <li id="languages-box-holder">
-                  <a href="#" class="dark-color">
-                  EN <i class="icon-caret-down"></i>
-                  </a>
-                  <ul class="languages-box popup-box cream-bg">
-                     <li class="arrow-top"><span class="shadow cream-bg"></span></li>
-                     <li class="focusor-top"></li>
-                     <li>
-                        <a href="#" class="dark-color">
-                        <i class="icon-lang-en"></i>
-                        English
-                        </a>
-                     </li>
-                     <li>
-                        <a href="#" class="dark-color">
-                        <i class="icon-lang-de"></i>
-                        German
-                        </a>
-                     </li>
-                     <li>
-                        <a href="#" class="dark-color">
-                        <i class="icon-lang-fr"></i>
-                        French
-                        </a>
-                     </li>
-                  </ul>
+                  <%= link_to "Regiser", new_user_registration_path, class: "dark-color" %>
                </li>
             </ul>
          </div>
@@ -81,13 +54,13 @@
    <div class="header-middle grid-container light-gradient">
       <div class="grid-100">
          <a href="homepage.html" class="header-logo grid-20" title="Shoppie">
-         <img src="assets/img-shoppie.png" alt="Shoppie"/>
+            <%= image_tag "logo.svg" %>
          </a>
          <div class="grid-80 remove-whitespaces">
             <div class="header-middle-box">
                <form class="input-with-submit header-search" action="#" method="POST">
                   <input type="text" class="text-input input-round dark-color light-bg" value="" placeholder="Search...">
-                  <button type="submit" class="input-round-submit middle-color dark-hover"><i class="icon-search"></i></button>
+                  <button type="submit" class="input-round-submit middle-color dark-hover"><i class="fa fa-search"></i></button>
                </form>
             </div>
             
@@ -99,18 +72,13 @@
       <div class="mobile-overlay"></div>
       <ul class="main-menu-mobile">
          <li class="middle-color light-hover">
-            <a href="#menu-mobile" class="main-menu-item click-slide"><i class="icon-reorder"></i></a>
+            <a href="#menu-mobile" class="main-menu-item click-slide"><i class="fa fa-reorder"></i></a>
          </li>
          <li class="middle-color light-hover">
-            <a href="homepage.html" class="main-menu-item"><i class="icon-home"></i></a>
+            <a href="homepage.html" class="main-menu-item"><i class="fa fa-home"></i></a>
          </li>
          <li class="main-menu-cart active-color light-hover">
-            <a href="cart.html" class="main-menu-item">
-            <i class="icon-shopping-cart">&nbsp;</i>
-            39
-            &nbsp;|&nbsp;
-            954,00 &euro;
-            </a>
+
          </li>
          <li class="middle-color light-hover">
             <a href="#sidebar-mobile" class="main-menu-item click-slide"><i class="icon-ellipsis-vertical"></i></a>
@@ -124,57 +92,28 @@
             <a href="#menu-mobile" class="main-menu-item click-slide"><i class="icon-chevron-left"></i></a>
          </li>
          <li class="light-color active-hover">
-            <a href="products-grid.html" class="main-menu-item transition-all">Women</a>
-            <ul class="mega-menu cream-bg full-width">
-               <li class="mega-menu-active cream-gradient"></li>
-               <li class="mega-menu-box">
-                  <span class="mega-menu-title active-color clearfix">Categories</span>
-                  <ul class="mega-menu-list">
-                     <li>
-                        <a href="products-grid.html" class="dark-color active-hover">
-                        View All <span class="middle-color">(3125)</span>
-                        </a>
+            <%= link_to "Home", root_path, class: "main-menu-item transition-all" %>
+         </li>
+         
+         <% @category.each do |cate| %>
+               <li class="light-color active-hover">
+                  <%= link_to cate.name,root_path, class: "main-menu-item transition-all" %>
+                  <ul class="mega-menu cream-bg">
+                     <li class="mega-menu-active cream-gradient"></li>
+                     <li class="mega-menu-box">
+                        <!-- <span class="mega-menu-title active-color clearfix">Inspiration</span> -->
+                        <ul class="mega-menu-list">
+                           <% cate.subcategories.each do |sub| %>
+                              <li>
+                                 <%= link_to sub.name, root_path, class: "dark-color active-hover" %>
+                              </li>
+                           <% end %>
+                        </ul>
                      </li>
                   </ul>
                </li>
-            </ul>
-         </li>
-         <li class="light-color active-hover">
-            <a href="products-grid.html" class="main-menu-item transition-all">Kids</a>
-            <ul class="mega-menu cream-bg">
-               <li class="mega-menu-active cream-gradient"></li>
-               <li class="mega-menu-box">
-                  <span class="mega-menu-title active-color clearfix">Inspiration</span>
-                  <ul class="mega-menu-list">
-                     <li>
-                        <a href="products-grid.html" class="dark-color active-hover">
-                        Denim Guide
-                        </a>
-                     </li>
-                     <li>
-                        <a href="products-grid.html" class="dark-color active-hover">
-                        Holiday Fashion
-                        </a>
-                     </li>
-                     <li>
-                        <a href="products-grid.html" class="dark-color active-hover">
-                        Holiday Lingerie
-                        </a>
-                     </li>
-                     <li>
-                        <a href="products-grid.html" class="dark-color active-hover">
-                        Ladies' Spring Preview
-                        </a>
-                     </li>
-                     <li>
-                        <a href="products-grid.html" class="dark-color active-hover">
-                        Gift Of The Week
-                        </a>
-                     </li>
-                  </ul>
-               </li>
-            </ul>
-         </li>
+         <% end %>
+         <!--
          <li class="light-color active-hover">
             <a href="products-list.html" class="main-menu-item transition-all">Shoes</a>
             <ul class="mega-menu cream-bg">
@@ -317,7 +256,7 @@
                   </ul>
                </li>
             </ul>
-         </li>
+         </li> -->
       </ul>
    </nav>
 </header>

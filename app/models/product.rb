@@ -3,4 +3,22 @@ class Product < ActiveRecord::Base
   belongs_to :user
 
   mount_uploader :image, ImageUploader
+  
+  # rails_admin do
+  #   edit do
+  #     field :name
+  #     field :image
+  #     field :description
+  #     field :color
+  #     field :user
+  #     field :subcategory
+  #   end
+
+    # list do
+    #   field :username
+    #   field :email
+    #   field :approved, :toggle
+    #   field :admin
+    # end
+  # end
 end
