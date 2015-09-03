@@ -8,8 +8,11 @@ class Product < ActiveRecord::Base
   #   edit do
   #     field :name
   #     field :image
+  #     field :price
   #     field :description
   #     field :color
+  #     field :label
+  #     field :bigsell 
   #     field :user
   #     field :subcategory
   #   end
